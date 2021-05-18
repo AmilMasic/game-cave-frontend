@@ -8,7 +8,7 @@ import Publishers from '../components/publishers';
 class PublishersContainer extends React.Component {
 
   componentDidMount(){
-
+    this.props.fetchPublishers()
   }
 
   render(){
@@ -23,9 +23,9 @@ class PublishersContainer extends React.Component {
 }
 
 const mapStateToProps = state => {
-  return (
+  return {
     publishers: state.publishers
-  )
+  }
 }
 
-export default connect(mapStateToProps)(PublisherContainer)
+export default connect(mapStateToProps, {fetchPublishers})(PublishersContainer)
