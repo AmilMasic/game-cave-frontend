@@ -14,10 +14,14 @@ export default class PublisherInput extends React.Component {
     })
   }
 
+  handleOnSubmit = () => {
+
+  }
+
   render(){
     return(
       <div>
-        <form>
+        <form onSubmit={this.handleOnSubmit}>
           <label>Publisher Name </label>
           <input
             type='text'
@@ -42,6 +46,7 @@ export default class PublisherInput extends React.Component {
             name='gamingStore'
             onChange={this.handleOnChange}
           /><br/>
+          <input type='submit'/>
         </form>
       </div>
     )
