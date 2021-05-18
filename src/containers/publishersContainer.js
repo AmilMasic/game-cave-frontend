@@ -16,7 +16,7 @@ class PublishersContainer extends React.Component {
     return(
       <div>
         < PublisherInput />
-        < Publishers />
+        < Publishers publishers={this.props.publishers}/>
       </div>
     )
   }
