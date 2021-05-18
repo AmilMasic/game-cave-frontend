@@ -1,8 +1,16 @@
 import React from 'react';
-import PublisherInput from '../components/publisherInput'
-import Publishers from '../components/publishers'
+import {connect} from 'react-redux';
 
-export default class PublishersContainer extends React.Component {
+import {fetchPublishers} from '../actions/fetchPublishers';
+import PublisherInput from '../components/publisherInput';
+import Publishers from '../components/publishers';
+
+class PublishersContainer extends React.Component {
+
+  componentDidMount(){
+
+  }
+
   render(){
 
     return(
@@ -13,3 +21,11 @@ export default class PublishersContainer extends React.Component {
     )
   }
 }
+
+const mapStateToProps = state => {
+  return (
+    publishers: state.publishers
+  )
+}
+
+export default connect(mapStateToProps)(PublisherContainer)
