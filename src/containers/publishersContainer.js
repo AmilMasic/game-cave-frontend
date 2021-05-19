@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Route} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
 
 import {fetchPublishers} from '../actions/fetchPublishers';
 import PublisherInput from '../components/publisherInput';
@@ -17,10 +17,11 @@ class PublishersContainer extends React.Component {
 
     return(
       <div>
-        < Route path='/publishers/new' component={PublisherInput} />
-        <br/>
-        < Route path='/publishers/:id' render={(routerProps) => < Publisher {...routerProps} publishers={this.props.publishers}/> } />
-        < Route exact path='/publishers' render={() => < Publishers publishers={this.props.publishers} /> } />
+        <Switch>
+          < Route path='/publishers/new' component={PublisherInput} />
+          < Route path='/publishers/:id' render={(routerProps) => < Publisher {...routerProps} publishers={this.props.publishers}/> } />
+          < Route exact path='/publishers' render={() => < Publishers publishers={this.props.publishers} /> } />
+        </Switch>
       </div>
     )
   }
