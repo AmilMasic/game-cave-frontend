@@ -11,7 +11,7 @@ const Publisher = (props) => {
         {publisher ? publisher.name : null} - {publisher ? publisher.established : null} - {publisher ? publisher.gamestore : null}
       </li>
       <br/>
-      <GamesContainer/>
+      <GamesContainer publisher={publisher}/>
     </div>
   )
 }

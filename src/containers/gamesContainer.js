@@ -10,7 +10,7 @@ class GamesContainer extends React.Component {
       <div>
         GamesContainer
         <GameInput />
-        <Games />
+        <Games games={this.props.publisher && this.props.publisher.games} />
       </div>
     )
   }
