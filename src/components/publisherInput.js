@@ -19,6 +19,11 @@ class PublisherInput extends React.Component {
   handleOnSubmit = (event) => {
     event.preventDefault()
     this.props.addPublisher(this.state)
+    this.setState({
+      name: '',
+      established: '',
+      gamestore: '',
+    })
   }
 
   render(){
