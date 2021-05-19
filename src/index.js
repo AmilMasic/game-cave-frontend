@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import {createStore, compose, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 import {Provider} from 'react-redux';
+import {BrowserRouter as Router} from 'react-router-dom';
 
 import publisherReducer from './reducers/publisherReducer';
 
@@ -17,7 +18,9 @@ let store = createStore(publisherReducer, composeEnhancers(applyMiddleware(thunk
 
 ReactDOM.render(
   <Provider store={store} >
-    <App />
+    <Router>
+      <App />
+    </Router>
   </Provider>,
   document.getElementById('root')
 );

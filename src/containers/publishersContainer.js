@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {Route} from 'react-router-dom'
 
 import {fetchPublishers} from '../actions/fetchPublishers';
 import PublisherInput from '../components/publisherInput';
@@ -15,9 +16,10 @@ class PublishersContainer extends React.Component {
 
     return(
       <div>
-        < PublisherInput />
+        < Route path='/publishers/new' component={PublisherInput} />
+
         <br/>
-        < Publishers publishers={this.props.publishers}/>
+        < Route path='/publishers' render={() => < Publishers publishers={this.props.publishers} /> } />
       </div>
     )
   }
