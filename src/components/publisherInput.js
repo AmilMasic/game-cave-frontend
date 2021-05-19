@@ -1,11 +1,13 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import {addPublisher} from '../actions/addPublisher'
 
-export default class PublisherInput extends React.Component {
+class PublisherInput extends React.Component {
 
   state = {
     name: '',
     established: '',
-    gamingStore: ''
+    gamestore: '',
   }
 
   handleOnChange = (event) => {
@@ -14,8 +16,9 @@ export default class PublisherInput extends React.Component {
     })
   }
 
-  handleOnSubmit = () => {
-
+  handleOnSubmit = (event) => {
+    event.preventDefault()
+    this.props.addPublisher(this.state)
   }
 
   render(){
@@ -42,8 +45,8 @@ export default class PublisherInput extends React.Component {
           <input
             type='text'
             placeholder='Origin'
-            value={this.state.gamingStore}
-            name='gamingStore'
+            value={this.state.gamestore}
+            name='gamestore'
             onChange={this.handleOnChange}
           /><br/>
           <input type='submit'/>
@@ -53,3 +56,5 @@ export default class PublisherInput extends React.Component {
   }
 
 }
+
+export default connect(null, {addPublisher})(PublisherInput)
