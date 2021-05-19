@@ -2,9 +2,11 @@ import React from 'react';
 
 const Publisher = (props) => {
 
+  let publisher = props.publishers[props.match.params.id - 1];
+
   return (
     <li>
-      {props.publisher.name} - {props.publisher.established} - {props.publisher.gamestore}
+      {publisher ? publisher.name : null} - {publisher ? publisher.established : null} - {publisher ? publisher.gamestore : null}
     </li>
   )
 }

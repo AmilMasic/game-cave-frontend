@@ -5,6 +5,7 @@ import {Route} from 'react-router-dom'
 import {fetchPublishers} from '../actions/fetchPublishers';
 import PublisherInput from '../components/publisherInput';
 import Publishers from '../components/publishers';
+import Publisher from '../components/publisher';
 
 class PublishersContainer extends React.Component {
 
@@ -17,8 +18,8 @@ class PublishersContainer extends React.Component {
     return(
       <div>
         < Route path='/publishers/new' component={PublisherInput} />
-
         <br/>
+        < Route path='/publishers/:id' render={(routerProps) => < Publisher {...routerProps} publishers={this.props.publishers}/> } />
         < Route exact path='/publishers' render={() => < Publishers publishers={this.props.publishers} /> } />
       </div>
     )
