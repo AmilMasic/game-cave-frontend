@@ -3,8 +3,8 @@ import GamesContainer from '../containers/gamesContainer'
 
 const Publisher = (props) => {
 
-  let publisher = props.publishers[props.match.params.id - 1];
-
+  // let publisher = props.publishers[props.match.params.id - 1];
+  let publisher = props.publishers.filter(publisher => publisher.id == props.match.params.id)[0]
   return (
     <div>
       <li>
