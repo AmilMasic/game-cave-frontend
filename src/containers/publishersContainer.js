@@ -19,7 +19,7 @@ class PublishersContainer extends React.Component {
         < Route path='/publishers/new' component={PublisherInput} />
 
         <br/>
-        < Route path='/publishers' render={() => < Publishers publishers={this.props.publishers} /> } />
+        < Route exact path='/publishers' render={() => < Publishers publishers={this.props.publishers} /> } />
       </div>
     )
   }
