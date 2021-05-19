@@ -20,7 +20,7 @@ class PublishersContainer extends React.Component {
         <Switch>
           < Route path='/publishers/new' component={PublisherInput} />
           < Route path='/publishers/:id' render={(routerProps) => < Publisher {...routerProps} publishers={this.props.publishers}/> } />
-          < Route exact path='/publishers' render={() => < Publishers publishers={this.props.publishers} /> } />
+          < Route path='/publishers' render={() => < Publishers publishers={this.props.publishers} /> } />
         </Switch>
       </div>
     )
