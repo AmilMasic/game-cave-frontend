@@ -8,6 +8,8 @@ export const addPublisher = (data) => {
       method: 'POST',
       body: JSON.stringify(data)
     })
+    .then(response => response.json())
+    .then(publisher => dispatch({type: 'ADD_PUBLISHER', payload: publisher}))
 
   }
 }
