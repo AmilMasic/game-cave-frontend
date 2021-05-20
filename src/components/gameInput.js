@@ -1,4 +1,6 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import {addGame} from '../actions/addGame';
 
 class GameInput extends React.Component {
 
@@ -17,6 +19,7 @@ class GameInput extends React.Component {
 
   handleOnSubmit = (event) => {
     event.preventDefault()
+  
     this.props.addGame(this.state)
     this.setState({
       title: '',
@@ -32,7 +35,7 @@ class GameInput extends React.Component {
         <label>Game Title </label>
         <input
           type='text'
-          placeholder='name'
+          placeholder='title'
           value={this.state.title}
           name='title'
           onChange={this.handleOnChange}
@@ -40,7 +43,7 @@ class GameInput extends React.Component {
         <label>Genre: </label>
         <input
           type='text'
-          placeholder='1986'
+          placeholder='RPG'
           value={this.state.genre}
           name='genre'
           onChange={this.handleOnChange}
@@ -48,7 +51,7 @@ class GameInput extends React.Component {
         <label>Release Date </label>
         <input
           type='text'
-          placeholder='Origin'
+          placeholder='2020'
           value={this.state.release_date}
           name='release_date'
           onChange={this.handleOnChange}
@@ -61,4 +64,4 @@ class GameInput extends React.Component {
 
 }
 
-export default GameInput
+export default connect(null, {addGame})(GameInput)

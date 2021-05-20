@@ -1,4 +1,4 @@
-export const addGame = (game) => {
+export const addGame = (data) => {
   return (dispatch) => {
     fetch('http://localhost:3000/api/v1/games', {
       headers: {
@@ -11,4 +11,5 @@ export const addGame = (game) => {
     .then(response => response.json())
     .then(game => dispatch({type: 'ADD_GAME', payload: game}))
 
+}
 }
