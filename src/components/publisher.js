@@ -1,6 +1,7 @@
 import React from 'react';
 import GamesContainer from '../containers/gamesContainer'
 
+
 const Publisher = (props) => {
 
   // let publisher = props.publishers[props.match.params.id - 1];
