@@ -9,17 +9,24 @@ class GameInput extends React.Component {
     title: '',
     genre: '',
     release_date: '',
+    completed: false,
   }
 
-  handleOnChange = (event) => {
-    this.setState({
-      [event.target.name]: event.target.value
-    })
-  }
+
+
+  handleInputChange = (event) => {
+   const target = event.target;
+   const value = target.type === 'checkbox' ? target.checked : target.value;
+   const name = target.name;
+
+   this.setState({
+     [name]: value
+   });
+ }
 
   handleOnSubmit = (event) => {
     event.preventDefault()
-  
+
     this.props.addGame(this.state)
     this.setState({
       title: '',
@@ -56,6 +63,13 @@ class GameInput extends React.Component {
           name='release_date'
           onChange={this.handleOnChange}
         /><br/>
+        <label> Did you finish the game? </label>
+        <input
+          type='checkbox'
+          name='completed'
+          checked={this.state.completed}
+          onChange={this.handleOnChange}
+        />
         <input type='submit'/>
       </form>
       </div>
