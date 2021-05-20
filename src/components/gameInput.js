@@ -29,7 +29,7 @@ class GameInput extends React.Component {
   handleOnSubmit = (event) => {
     event.preventDefault()
 
-    this.props.addGame(this.state)
+    this.props.addGame(this.state, this.props.publisher.id)
     this.setState({
       title: '',
       genre: '',
