@@ -3,7 +3,7 @@ export default function gamesReducer(state = [], action) {
     // case 'FETCH_GAMES':
     //   return {games: action.payload}
     case 'ADD_GAME':
-      return {...state, games: [...state.game, action.payload]}
+      return {...state, games: [...state.games, action.payload]}
     default:
       return state
   }
