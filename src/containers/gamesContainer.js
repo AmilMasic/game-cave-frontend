@@ -1,4 +1,5 @@
 import React from 'react';
+import {Route, Switch} from 'react-router-dom'
 
 import GameInput from '../components/gameInput';
 import Games from '../components/games';
@@ -9,8 +10,8 @@ class GamesContainer extends React.Component {
     return (
       <div>
         GamesContainer
-        <GameInput />
-        <Games games={this.props.publisher && this.props.publisher.games} />
+        < Route path='/games/new' component={GameInput} />
+          < Route path='/games' render={() => < Games games={this.props.games} /> } />
       </div>
     )
   }
