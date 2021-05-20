@@ -16,7 +16,7 @@ class GameInput extends React.Component {
 
 
 
-  handleInputChange = (event) => {
+  handleOnChange = (event) => {
    const target = event.target;
    const value = target.type === 'checkbox' ? target.checked : target.value;
    const name = target.name;
@@ -41,6 +41,7 @@ class GameInput extends React.Component {
   }
 
   render(){
+
     return (
       <div>
       <form onSubmit={this.handleOnSubmit}>

@@ -10,9 +10,8 @@ class GamesContainer extends React.Component {
   render(){
     return (
       <div>
-        GamesContainer
-        < Route path='/games/new' component={GameInput} />
-          < Route path='/games' render={() => < Games games={this.props.games} /> } />
+        <GameInput publisher={this.props.publisher}/><br/>
+        <Games games={this.props.publisher && this.props.publisher.games}/>
       </div>
     )
   }
