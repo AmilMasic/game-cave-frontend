@@ -10,6 +10,8 @@ class GameInput extends React.Component {
     genre: '',
     release_date: '',
     completed: false,
+    platform: '',
+    description: '',
   }
 
 
@@ -32,6 +34,9 @@ class GameInput extends React.Component {
       title: '',
       genre: '',
       release_date: '',
+      completed: false,
+      platform: '',
+      description: '',
     })
   }
 
@@ -46,7 +51,7 @@ class GameInput extends React.Component {
           value={this.state.title}
           name='title'
           onChange={this.handleOnChange}
-        /><br/>
+        /> <br/>
         <label>Genre: </label>
         <input
           type='text'
@@ -54,7 +59,7 @@ class GameInput extends React.Component {
           value={this.state.genre}
           name='genre'
           onChange={this.handleOnChange}
-        /><br/>
+        /> <br/>
         <label>Release Date </label>
         <input
           type='text'
@@ -62,14 +67,30 @@ class GameInput extends React.Component {
           value={this.state.release_date}
           name='release_date'
           onChange={this.handleOnChange}
-        /><br/>
+        /> <br/>
         <label> Did you finish the game? </label>
         <input
           type='checkbox'
           name='completed'
           checked={this.state.completed}
           onChange={this.handleOnChange}
-        />
+        /> <br/>
+        <label>Platform that you play the game on: </label>
+        <input
+          type='text'
+          placeholder='PC'
+          value={this.state.platform}
+          name='platform'
+          onChange={this.handleOnChange}
+        /><br/>
+        <label>Description/Personal Comments:</label><br/>
+        <textarea
+          type='text'
+          placeholder='The game is set in...'
+          value={this.state.description}
+          name='description'
+          onChange={this.handleOnChange}
+        /><br/>
         <input type='submit'/>
       </form>
       </div>
