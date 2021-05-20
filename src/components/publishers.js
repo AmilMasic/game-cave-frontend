@@ -7,7 +7,7 @@ const Publishers = (props) => {
   return (
 
     <div>
-      {props.publishers.publishers && props.publishers.publishers.map(publisher =>
+      {props.publishers && props.publishers.map(publisher =>
         <div key={publisher.id}>
           < Link to={`/publishers/${publisher.id}`}>{publisher.name}</Link>
         </ div>)}

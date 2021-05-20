@@ -1,4 +1,7 @@
-export default function publishersReducer(state = [], action) {
+export default function publishersReducer(state = {
+  publishers: [],
+  games: []
+}, action) {
   switch (action.type) {
     case 'FETCH_PUBLISHERS':
       return {publishers: action.payload}
