@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {addPublisher} from '../actions/addPublisher'
+import {addPublisher} from '../actions/addPublisher';
 
 class PublisherInput extends React.Component {
 
