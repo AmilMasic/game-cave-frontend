@@ -16,6 +16,15 @@ export default function publishersReducer(state = {
        }
      })
      return {...state, publishers: publishers}
+     case 'DELETE_GAME':
+      let publisherToDeleteGameFrom = state.publishers.map(publisher => {
+        if (publisher.id === action.payload.id) {
+          return action.payload
+        } else {
+          return publisher
+        }
+      })
+      return {...state, publishers: publisherToDeleteGameFrom}
     default:
       return state
   }
