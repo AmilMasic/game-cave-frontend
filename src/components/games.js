@@ -1,18 +1,19 @@
 import React from 'react';
 import {Route, Link} from 'react-router-dom';
-import {connect} from 'react-redux';
-import {deleteGame} from '../actions/deleteGame';
+// import {connect} from 'react-redux';
+// import {deleteGame} from '../actions/deleteGame';
 import Game from './game';
 
 
 const Games = (props) => {
 
-  const handleDelete = (game) => {
-
-    props.deleteGame(game.id, game.publisher_id)
-  }
+  // const handleDelete = (game) => {
+  //
+  //   props.deleteGame(game.id, game.publisher_id)
+  // }
 
   return (
+
     <div>
      {props.games && props.games.map(game =>
       <div key={game.id}>
@@ -22,4 +23,4 @@ const Games = (props) => {
   )
 }
 
-export default connect(null, {deleteGame})(Games);
+export default Games;
