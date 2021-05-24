@@ -6,6 +6,7 @@ import {fetchPublishers} from '../actions/fetchPublishers';
 import PublisherInput from '../components/publisherInput';
 import Publishers from '../components/publishers';
 import Publisher from '../components/publisher';
+import NavBar from '../components/navbar';
 
 class PublishersContainer extends React.Component {
 
@@ -17,6 +18,8 @@ class PublishersContainer extends React.Component {
 
     return(
       <div>
+        <NavBar/>
+        <br/>
         <Switch>
           < Route path='/publishers/new' component={PublisherInput} />
           < Route path='/publishers/:id' render={(routerProps) => < Publisher {...routerProps} publishers={this.props.publishers}/> } />
