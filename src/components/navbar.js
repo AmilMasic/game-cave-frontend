@@ -8,7 +8,6 @@ const NavBar = (props) => {
       <Link to='/publishers' style={{paddingRight: '10px'}}>Publishers  </Link>
       <Link to='/publishers/new'> Add Publisher</Link>
     </div>
-
   )
 }
 

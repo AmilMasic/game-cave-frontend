@@ -1,11 +1,8 @@
 import React from 'react';
 import GamesContainer from '../containers/gamesContainer'
 
-
 const Publisher = (props) => {
 
-
-  // let publisher = props.publishers[props.match.params.id - 1];
   let publisher = props.publishers.filter(publisher => publisher.id == props.match.params.id)[0]
   return (
     <div>
@@ -13,8 +10,6 @@ const Publisher = (props) => {
         {publisher ? publisher.name : null} - {publisher ? publisher.established : null} - {publisher ? publisher.gamestore : null}
       </h3>
       <br/>
-    
-
       <GamesContainer publisher={publisher}/>
     </div>
   )

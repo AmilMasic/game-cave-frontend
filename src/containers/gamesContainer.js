@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 import GameInput from '../components/gameInput';
 import Games from '../components/games';
 
@@ -14,8 +13,6 @@ class GamesContainer extends React.Component {
       </div>
     )
   }
-
 }
-
 
 export default GamesContainer;

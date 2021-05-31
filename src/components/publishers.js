@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route, Link} from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import Publisher from './publisher';
 
 const Publishers = (props) => {
@@ -11,9 +11,7 @@ const Publishers = (props) => {
         <div key={publisher.id}>
           < Link to={`/publishers/${publisher.id}`}>{publisher.name}</Link>
         </ div>)}
-
     </div>
-
   )
 
 }

@@ -1,9 +1,9 @@
 import React from 'react';
+
 import {connect} from 'react-redux';
 import {addGame} from '../actions/addGame';
 
 class GameInput extends React.Component {
-
 
   state = {
     title: '',
@@ -13,8 +13,6 @@ class GameInput extends React.Component {
     platform: '',
     description: '',
   }
-
-
 
   handleOnChange = (event) => {
    const target = event.target;
@@ -30,6 +28,7 @@ class GameInput extends React.Component {
     event.preventDefault()
 
     this.props.addGame(this.state, this.props.publisher.id)
+
     this.setState({
       title: '',
       genre: '',
@@ -45,7 +44,8 @@ class GameInput extends React.Component {
     return (
       <div>
       <form onSubmit={this.handleOnSubmit}>
-      <h2> Add a new game from this publisher: </h2>
+        <h2> Add a new game from this publisher: </h2>
+
         <label>Game Title </label>
         <input
           type='text'
@@ -54,6 +54,7 @@ class GameInput extends React.Component {
           name='title'
           onChange={this.handleOnChange}
         /> <br/>
+
         <label>Genre: </label>
         <input
           type='text'
@@ -62,6 +63,7 @@ class GameInput extends React.Component {
           name='genre'
           onChange={this.handleOnChange}
         /> <br/>
+
         <label>Release Date </label>
         <input
           type='text'
@@ -70,6 +72,7 @@ class GameInput extends React.Component {
           name='release_date'
           onChange={this.handleOnChange}
         /> <br/>
+
         <label> Did you finish the game? </label>
         <input
           type='checkbox'
@@ -77,6 +80,7 @@ class GameInput extends React.Component {
           checked={this.state.completed}
           onChange={this.handleOnChange}
         /> <br/>
+
         <label>Platform that you play the game on: </label>
         <input
           type='text'
@@ -85,6 +89,7 @@ class GameInput extends React.Component {
           name='platform'
           onChange={this.handleOnChange}
         /><br/>
+
         <label>Description/Personal Comments:</label><br/>
         <textarea
           type='text'
@@ -93,6 +98,7 @@ class GameInput extends React.Component {
           name='description'
           onChange={this.handleOnChange}
         /><br/>
+
         <input type='submit'/>
       </form>
       </div>
