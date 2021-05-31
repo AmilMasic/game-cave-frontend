@@ -3,6 +3,8 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {addGame} from '../actions/addGame';
 
+import {Form, Button } from 'react-bootstrap';
+
 class GameInput extends React.Component {
 
   state = {
@@ -43,64 +45,74 @@ class GameInput extends React.Component {
 
     return (
       <div>
-      <form onSubmit={this.handleOnSubmit}>
-        <h2> Add a new game from this publisher: </h2>
+        <Form onSubmit={this.handleOnSubmit}>
+          <Form.Group controlId="formTitle">
+            <Form.Label> Game Title </Form.Label>
+            <Form.Control
+            type="text"
+            placeholder="title"
+            value={this.state.title}
+            name="title"
+            onChange={this.handleOnChange}
+            />
+          </Form.Group>
 
-        <label>Game Title </label>
-        <input
-          type='text'
-          placeholder='title'
-          value={this.state.title}
-          name='title'
-          onChange={this.handleOnChange}
-        /> <br/>
+          <Form.Group controlId="formGenre">
+            <Form.Label> Genre </Form.Label>
+            <Form.Control
+            type="text"
+            placeholder="Action-RPG"
+            value={this.state.genre}
+            name="genre"
+            onChange={this.handleOnChange}
+            />
+          </Form.Group>
 
-        <label>Genre: </label>
-        <input
-          type='text'
-          placeholder='RPG'
-          value={this.state.genre}
-          name='genre'
-          onChange={this.handleOnChange}
-        /> <br/>
+          <Form.Group controlId="formReleaseDate">
+            <Form.Label> Release Date </Form.Label>
+            <Form.Control
+            type="text"
+            placeholder="1999"
+            value={this.state.release_date}
+            name="release_date"
+            onChange={this.handleOnChange}
+            />
+          </Form.Group>
 
-        <label>Release Date </label>
-        <input
-          type='text'
-          placeholder='2020'
-          value={this.state.release_date}
-          name='release_date'
-          onChange={this.handleOnChange}
-        /> <br/>
+          <Form.Group controlId="formGameCompleted">
+            <Form.Check
+            type="checkbox"
+            checked={this.state.completed}
+            id="customControlAutoSizing"
+            name="completed"
+            label="Did you finish the game?"
+            onChange={this.handleOnChange}
+            />
+          </Form.Group>
 
-        <label> Did you finish the game? </label>
-        <input
-          type='checkbox'
-          name='completed'
-          checked={this.state.completed}
-          onChange={this.handleOnChange}
-        /> <br/>
+          <Form.Group controlId="formPlatform">
+            <Form.Label> What platform did you play on? </Form.Label>
+            <Form.Control
+            type="text"
+            placeholder="PS4"
+            value={this.state.platform}
+            name="platform"
+            onChange={this.handleOnChange}
+            />
+          </Form.Group>
 
-        <label>Platform that you play the game on: </label>
-        <input
-          type='text'
-          placeholder='PC'
-          value={this.state.platform}
-          name='platform'
-          onChange={this.handleOnChange}
-        /><br/>
-
-        <label>Description/Personal Comments:</label><br/>
-        <textarea
-          type='text'
-          placeholder='The game is set in...'
-          value={this.state.description}
-          name='description'
-          onChange={this.handleOnChange}
-        /><br/>
-
-        <input type='submit'/>
-      </form>
+          <Form.Group controlId="formDescription">
+            <Form.Label> Description </Form.Label>
+            <Form.Control
+            type="text"
+            placeholder="The game is set in..."
+            value={this.state.description}
+            name="description"
+            onChange={this.handleOnChange}
+            />
+          </Form.Group>
+          < Button variant="primary" type="submit"> Submit </Button>
+        </Form>
       </div>
     )
   }
