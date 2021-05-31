@@ -4,6 +4,8 @@ import {fetchPublishers} from './actions/fetchPublishers';
 import PublishersContainer from './containers/publishersContainer';
 import GamesContainer from './containers/gamesContainer';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 class App extends React.Component {
 
 
@@ -12,7 +14,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <PublishersContainer/>
-      
+
       </div>
     );
   }
