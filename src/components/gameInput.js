@@ -45,6 +45,7 @@ class GameInput extends React.Component {
     return (
       <div>
       <form onSubmit={this.handleOnSubmit}>
+      <h2> Add a new game from this publisher: </h2>
         <label>Game Title </label>
         <input
           type='text'

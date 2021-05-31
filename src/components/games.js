@@ -7,14 +7,12 @@ import Game from './game';
 
 const Games = (props) => {
 
-  // const handleDelete = (game) => {
-  //
-  //   props.deleteGame(game.id, game.publisher_id)
-  // }
+
 
   return (
 
     <div>
+      <h2> Games by the publisher: </h2>
      {props.games && props.games.map(game =>
       <div key={game.id}>
         < Link to={`/publishers/${game.publisher_id}/games/${game.id}`}>{game.title}</Link>
