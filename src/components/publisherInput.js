@@ -2,6 +2,8 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {addPublisher} from '../actions/addPublisher';
 
+import {Form, Button} from 'react-bootstrap';
+
 class PublisherInput extends React.Component {
 
   state = {
@@ -29,33 +31,41 @@ class PublisherInput extends React.Component {
   render(){
     return(
       <div>
-        <form onSubmit={this.handleOnSubmit}>
-          <label>Publisher Name </label>
-          <input
-            type='text'
-            placeholder='name'
-            value={this.state.name}
-            name='name'
-            onChange={this.handleOnChange}
-          /><br/>
-          <label>Established: </label>
-          <input
-            type='text'
-            placeholder='1986'
-            value={this.state.established}
-            name='established'
-            onChange={this.handleOnChange}
-          /><br/>
-          <label>Gaming Store: </label>
-          <input
-            type='text'
-            placeholder='Origin'
-            value={this.state.gamestore}
-            name='gamestore'
-            onChange={this.handleOnChange}
-          /><br/>
-          <input type='submit'/>
-        </form>
+        <Form onSubmit={this.handleOnSubmit}>
+          <Form.Group controlId="formName">
+            <Form.Label> Publisher Name </Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="name"
+              value={this.state.name}
+              name="name"
+              onChange={this.handleOnChange}
+               />
+          </Form.Group>
+
+          <Form.Group controlId="formEstablished">
+            <Form.Label> Year Of Establishement </Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="1986"
+              value={this.state.established}
+              name="established"
+              onChange={this.handleOnChange}
+               />
+          </Form.Group>
+
+          <Form.Group controlId="formStore">
+            <Form.Label> Gaming Store </Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Origin"
+              value={this.state.gamestore}
+              name="gamestore"
+              onChange={this.handleOnChange}
+               />
+          </Form.Group>
+          < Button variant='primary' type='submit'> Submit </Button>
+        </Form>
       </div>
     )
   }
