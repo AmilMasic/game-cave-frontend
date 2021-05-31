@@ -16,16 +16,17 @@ class PublishersContainer extends React.Component {
   }
 
   render(){
-    debugger;
+
     return(
       <div>
         <NavBar/>
         <br/>
         <Switch>
+          < Route exact path='/publishers/:id/games/:game_id' render={(routerProps) => < Game {...routerProps} publishers={this.props.publishers}/> } />
           < Route path='/publishers/new' component={PublisherInput} />
           < Route exact path='/publishers/:id' render={(routerProps) => < Publisher {...routerProps} publishers={this.props.publishers}/> } />
           < Route path='/publishers' render={() => < Publishers publishers={this.props.publishers} /> } />
-          < Route exact path='/publishers/:id/games/:game_id' render={(routerProps) => < Game {...routerProps} games={this.props.games}/> } />
+
 
         </Switch>
       </div>
