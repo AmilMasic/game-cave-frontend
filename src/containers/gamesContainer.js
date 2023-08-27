@@ -7,7 +7,7 @@ class GamesContainer extends React.Component {
   render() {
     return (
       <div>
-        console.log('testing');
+        console.log('testing'); console.log('testing');
         <GameInput publisher={this.props.publisher} />
         <br />
         <Games games={this.props.publisher && this.props.publisher.games} />
